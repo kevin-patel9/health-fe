@@ -1,6 +1,6 @@
 
 export const postData = async (endPoint = '', data = {}) => {
-    const url = `http://192.168.0.103:9000/${endPoint}`;
+    const url = `https://health-be.onrender.com/${endPoint}`;
     let headers = {
         'Content-Type': 'application/json',
     }
