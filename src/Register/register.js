@@ -3,6 +3,7 @@ import { StatusBar } from "expo-status-bar";
 import { useState } from "react";
 import { View, Text, StyleSheet, SafeAreaView, Image, TextInput, TouchableOpacity, ScrollView } from "react-native";
 import { registerApi } from "../../API/LoginAuth";
+import { useTogglePasswordVisibility } from "../../hooks/useTogglePasswordVisible";
 
 const RegisterPage = ({ navigation }) => {
 
@@ -10,6 +11,8 @@ const RegisterPage = ({ navigation }) => {
     const [password, setPassword] = useState("");
     const [phoneNumber, setPhoneNumber] = useState("");
     const [error, setError] = useState("");
+    const { passwordVisibility, rightIcon, handlePasswordVisibility } =
+    useTogglePasswordVisibility();
 
     const goToLoginPage = () => {
         navigation.navigate("login");
@@ -82,6 +85,7 @@ const RegisterPage = ({ navigation }) => {
                         keyboardType="default"
                         style={styles.inputBox}
                         maxLength={20}
+                        secureTextEntry={passwordVisibility}
                         onChangeText={(text) => setPassword(text)}
                     />
                 </View>
