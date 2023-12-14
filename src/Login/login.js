@@ -80,7 +80,7 @@ return (
                         setError("")
                         setPassword(text)
                     }}
-                // secureTextEntry={passwordVisibility}
+                secureTextEntry={passwordVisibility}
                 />
             </View>
             {error && <Text style={{ color: "red", fontSize: 12, marginTop: 4 }}>{error}</Text>}
